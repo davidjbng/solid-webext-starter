@@ -8,7 +8,6 @@ import webExtension from '@samrum/vite-plugin-web-extension';
 import pkg from './package.json';
 
 export default defineConfig({
-  root: resolve(__dirname, 'src'),
   plugins: [
     solidPlugin(),
     webExtension({
@@ -44,7 +43,6 @@ export default defineConfig({
     target: 'esnext',
     polyfillDynamicImport: false,
     outDir: resolve(__dirname, 'dist'),
-    emptyOutDir: true,
   },
   resolve: {
     conditions: ['development', 'browser'],

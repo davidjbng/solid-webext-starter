@@ -30,4 +30,5 @@ jobs:
       - uses: ./.github/actions/install-deps
 
       - name: ⚡ Vitest
+        timeout-minutes: 5
         run: pnpm run test -- --coverage
