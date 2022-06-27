@@ -4,9 +4,25 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { resolve } from 'node:path';
+import webExtension from '@samrum/vite-plugin-web-extension';
+import pkg from './package.json';
 
 export default defineConfig({
   root: resolve(__dirname, 'src'),
+  plugins: [
+    solidPlugin(),
+    webExtension({
+      manifest: {
+        name: pkg.name,
+        description: pkg.description,
+        version: pkg.version,
+        manifest_version: 3,
+        background: {
+          service_worker: 'index.ts',
+        },
+      },
+    }),
+  ],
   test: {
     environment: 'jsdom',
     globals: true,
@@ -27,6 +43,8 @@ export default defineConfig({
   build: {
     target: 'esnext',
     polyfillDynamicImport: false,
+    outDir: resolve(__dirname, 'dist'),
+    emptyOutDir: true,
   },
   resolve: {
     conditions: ['development', 'browser'],
