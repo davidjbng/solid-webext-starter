@@ -1,26 +1,27 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
-import webExtension from "vite-plugin-web-extension";
-import path from "node:path";
+import { defineConfig } from 'vite';
+import solidPlugin from 'vite-plugin-solid';
+// import webExtension from 'vite-plugin-web-extension';
+import path from 'node:path';
 
 export default defineConfig({
+  root: 'src',
   plugins: [
     solidPlugin(),
-    webExtension({
-      manifest: path.resolve(__dirname, "manifest.json"),
-      assets: "assets",
-    },),
+    // webExtension({
+    //   manifest: path.resolve(__dirname, 'manifest.json'),
+    //   assets: 'assets',
+    // },),
   ],
   test: {
-    environment: "jsdom",
+    environment: 'jsdom',
     globals: true,
     transformMode: {
       web: [/\.[jt]sx?$/],
     },
-    setupFiles: "./setupVitest.ts",
+    setupFiles: './setupVitest.ts',
     // solid needs to be inline to work around
     // a resolution issue in vitest:
     deps: {
@@ -32,10 +33,12 @@ export default defineConfig({
     isolate: false,
   },
   build: {
-    target: "esnext",
+    target: 'esnext',
     polyfillDynamicImport: false,
+    outDir: path.resolve(__dirname, 'dist'),
+    emptyOutDir: true,
   },
   resolve: {
-    conditions: ["development", "browser"],
+    conditions: ['development', 'browser'],
   },
 },);
