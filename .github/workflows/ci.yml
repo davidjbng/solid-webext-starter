@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-deps.yml
+      - uses: ./.github/actions/install-deps
 
       - name: 🔎 Type check
         run: npm run tsc
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-deps.yml
+      - uses: ./.github/actions/install-deps
 
       - name: ⚡ Run vitest
         run: npm run test -- --coverage
