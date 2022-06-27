@@ -3,9 +3,10 @@
 
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
+import { resolve } from 'node:path';
 
 export default defineConfig({
-  plugins: [solidPlugin()],
+  root: resolve(__dirname, 'src'),
   test: {
     environment: 'jsdom',
     globals: true,
