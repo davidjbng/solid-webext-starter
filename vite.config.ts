@@ -28,6 +28,7 @@ export default defineConfig({
     transformMode: {
       web: [/\.[jt]sx?$/],
     },
+    coverage: { enabled: true },
     setupFiles: './setupVitest.ts',
     // solid needs to be inline to work around
     // a resolution issue in vitest:
