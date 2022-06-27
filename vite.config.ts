@@ -3,18 +3,10 @@
 
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
-// import webExtension from 'vite-plugin-web-extension';
-import path from 'node:path';
 
 export default defineConfig({
   root: 'src',
-  plugins: [
-    solidPlugin(),
-    // webExtension({
-    //   manifest: path.resolve(__dirname, 'manifest.json'),
-    //   assets: 'assets',
-    // },),
-  ],
+  plugins: [solidPlugin()],
   test: {
     environment: 'jsdom',
     globals: true,
@@ -35,10 +27,8 @@ export default defineConfig({
   build: {
     target: 'esnext',
     polyfillDynamicImport: false,
-    outDir: path.resolve(__dirname, 'dist'),
-    emptyOutDir: true,
   },
   resolve: {
     conditions: ['development', 'browser'],
   },
-},);
+});
