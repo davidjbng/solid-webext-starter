@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@testing-library/jest-dom': ^5.16.4
+  '@types/testing-library__jest-dom': ^5.14.5
   jsdom: ^19.0.0
   solid-js: ^1.4.2
   solid-testing-library: ^0.3.0
@@ -16,6 +17,7 @@ dependencies:
 
 devDependencies:
   '@testing-library/jest-dom': 5.16.4
+  '@types/testing-library__jest-dom': 5.14.5
   jsdom: 19.0.0
   solid-testing-library: 0.3.0_solid-js@1.4.2
   typescript: 4.7.4
@@ -490,7 +492,7 @@ packages:
     engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
     dependencies:
       '@babel/runtime': 7.17.9
-      '@types/testing-library__jest-dom': 5.14.3
+      '@types/testing-library__jest-dom': 5.14.5
       aria-query: 5.0.0
       chalk: 3.0.0
       css: 3.0.0
@@ -582,8 +584,8 @@ packages:
       '@types/node': 17.0.23
     dev: true
 
-  /@types/testing-library__jest-dom/5.14.3:
-    resolution: {integrity: sha512-oKZe+Mf4ioWlMuzVBaXQ9WDnEm1+umLx0InILg+yvZVBBDmzV5KfZyLrCvadtWcx8+916jLmHafcmqqffl+iIw==}
+  /@types/testing-library__jest-dom/5.14.5:
+    resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
       '@types/jest': 27.5.0
     dev: true
