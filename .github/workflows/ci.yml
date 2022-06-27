@@ -1,0 +1,33 @@
+name: 🚀 CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typescript:
+    name: ʦ TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/install-deps.yml
+
+      - name: 🔎 Type check
+        run: npm run tsc
+
+  vitest:
+    name: ⚡ Vitest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/install-deps.yml
+
+      - name: ⚡ Run vitest
+        run: npm run test -- --coverage
