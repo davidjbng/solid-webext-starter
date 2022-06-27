@@ -5,7 +5,7 @@ specifiers:
   jsdom: ^19.0.0
   solid-js: ^1.4.2
   solid-testing-library: ^0.3.0
-  typescript: ^4.6.4
+  typescript: ^4.7.4
   vite: ^2.9.9
   vite-plugin-solid: ^2.2.6
   vite-plugin-web-extension: ^1.4.0
@@ -18,7 +18,7 @@ devDependencies:
   '@testing-library/jest-dom': 5.16.4
   jsdom: 19.0.0
   solid-testing-library: 0.3.0_solid-js@1.4.2
-  typescript: 4.6.4
+  typescript: 4.7.4
   vite: 2.9.9
   vite-plugin-solid: 2.2.6
   vite-plugin-web-extension: 1.4.0_2axmyvda6lzw4iran425evxrpa
@@ -4776,8 +4776,8 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: true
 
-  /typescript/4.6.4:
-    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
+  /typescript/4.7.4:
+    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
