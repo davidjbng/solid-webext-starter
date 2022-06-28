@@ -1,4 +1,4 @@
-/** @type {import('eslint').Linter.Config}*/
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
@@ -9,4 +9,8 @@ module.exports = {
     'prettier',
     'plugin:solid/typescript',
   ],
+  env: {
+    node: true,
+    browser: true,
+  },
 };
