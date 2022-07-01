@@ -6,10 +6,15 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { resolve } from 'node:path';
 import webExtension from '@samrum/vite-plugin-web-extension';
-import { getManifest } from './manifest';
+import { getManifest } from '~/manifest';
 
 export default defineConfig({
   plugins: [solidPlugin(), webExtension({ manifest: getManifest() })],
+  resolve: {
+    alias: {
+      '~': resolve(__dirname, './src'),
+    },
+  },
   test: {
     environment: 'jsdom',
     globals: true,
@@ -27,13 +32,5 @@ export default defineConfig({
     // or both out to improve performance:
     threads: false,
     isolate: false,
-  },
-  build: {
-    target: 'esnext',
-    polyfillDynamicImport: false,
-    outDir: resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    conditions: ['development', 'browser'],
   },
 });
