@@ -32,7 +32,7 @@ jobs:
       - name: ⬣ Lint
         run: pnpm run lint
 
-  vitest:
+  test:
     name: ⚡ Vitest
     runs-on: ubuntu-latest
     steps:
@@ -42,3 +42,16 @@ jobs:
       - name: ⚡ Vitest
         timeout-minutes: 5
         run: pnpm run test -- --coverage
+
+  build:
+    name: 📦 Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/install-deps
+
+      - name: 📦 Build
+        run: pnpm run build
+
+      - name: Web-Ext Lint
+        run: pnpm run webext:lint
