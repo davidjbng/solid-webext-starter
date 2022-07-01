@@ -1,11 +1,11 @@
-import { Manifest } from "webextension-polyfill";
-import type PkgType from "./package.json";
-import { resolve } from "node:path";
-import fs from "fs-extra";
+import { Manifest } from 'webextension-polyfill';
+import type PkgType from '../package.json';
+import { resolve } from 'node:path';
+import fs from 'fs-extra';
 
 export function getManifest(): Manifest.WebExtensionManifest {
   const pkg = fs.readJSONSync(
-    resolve(__dirname, "package.json")
+    resolve(__dirname, 'package.json')
   ) as typeof PkgType;
 
   return {
@@ -14,7 +14,7 @@ export function getManifest(): Manifest.WebExtensionManifest {
     version: pkg.version,
     description: pkg.description,
     background: {
-      service_worker: "index.ts",
+      service_worker: 'index.ts',
     },
   };
 }
