@@ -2,6 +2,7 @@ import { For, createSignal } from 'solid-js';
 
 type Todo = { id: number; text: string; completed: boolean };
 
+// TODO: remove compoenent and create other test example
 export const TodoList = () => {
   let input!: HTMLInputElement;
   let todoId = 0;

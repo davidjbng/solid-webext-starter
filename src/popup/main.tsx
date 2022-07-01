@@ -1,9 +1,9 @@
 import { render } from 'solid-js/web';
-import { TodoList } from './todo-list';
+import { Popup } from './popup';
 
 const element = document.getElementById('app');
 if (!element) {
   throw new Error('No app element found');
 }
 
-render(() => <TodoList />, element);
+render(() => <Popup />, element);

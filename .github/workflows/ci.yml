@@ -21,13 +21,13 @@ jobs:
         run: pnpm run tsc
 
   lint:
-    name: ⬣ Lint
+    name: ⬣ ESLint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/install-deps
 
-      - name: ⬣ Lint
+      - name: ⬣ ESLint
         run: pnpm run lint
 
   test:
