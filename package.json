@@ -1,16 +1,18 @@
 {
-  "name": "vite-template-solid",
+  "name": "solid-webext-starter",
   "version": "0.0.0",
-  "description": "",
+  "description": "Vite+SolidJS Webextension",
   "type": "module",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "tsc": "tsc",
     "build": "vite build",
-    "serve": "vite preview",
     "test": "vitest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "serve:firefox": "web-ext run --start-url \"about:debugging#/runtime/this-firefox\"  --source-dir ./dist/",
+    "serve:chrome": "web-ext run -t chromium --start-url \"https://google.com\" --source-dir ./dist/",
+    "webext:lint": "web-ext lint -s ./dist"
   },
   "license": "MIT",
   "devDependencies": {
@@ -27,11 +29,13 @@
     "eslint-plugin-solid": "^0.7.0",
     "fs-extra": "^10.1.0",
     "jsdom": "^19.0.0",
+    "prettier": "^2.7.1",
     "solid-testing-library": "^0.3.0",
     "typescript": "^4.7.4",
     "vite": "^2.9.9",
     "vite-plugin-solid": "^2.2.6",
     "vitest": "^0.12.7",
+    "web-ext": "^7.1.0",
     "webextension-polyfill": "^0.9.0"
   },
   "dependencies": {

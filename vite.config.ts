@@ -1,16 +1,10 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
-import { resolve } from 'node:path';
 import webExtension from '@samrum/vite-plugin-web-extension';
-import { getManifest } from '~/manifest';
+import { getManifest } from './src/manifest';
 
 export default defineConfig({
   plugins: [solidPlugin(), webExtension({ manifest: getManifest() })],
-  resolve: {
-    alias: {
-      '~': resolve(__dirname, './src'),
-    },
-  },
   test: {
     environment: 'jsdom',
     globals: true,
