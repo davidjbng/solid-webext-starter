@@ -1,7 +1,3 @@
-/// <reference types="vitest" />
-/// <reference types="vite/client" />
-/// <reference types="@samrum/vite-plugin-web-extension/client" />
-
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { resolve } from 'node:path';
