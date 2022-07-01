@@ -1,27 +1,15 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
+/// <reference types="@samrum/vite-plugin-web-extension/client" />
 
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { resolve } from 'node:path';
 import webExtension from '@samrum/vite-plugin-web-extension';
-import pkg from './package.json';
+import { getManifest } from './manifest';
 
 export default defineConfig({
-  plugins: [
-    solidPlugin(),
-    webExtension({
-      manifest: {
-        name: pkg.name,
-        description: pkg.description,
-        version: pkg.version,
-        manifest_version: 3,
-        background: {
-          service_worker: 'index.ts',
-        },
-      },
-    }),
-  ],
+  plugins: [solidPlugin(), webExtension({ manifest: getManifest() })],
   test: {
     environment: 'jsdom',
     globals: true,
