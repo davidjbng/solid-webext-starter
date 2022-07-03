@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:watch": "vite build --watch",
+    "watch": "vite build --watch",
     "serve:firefox": "web-ext run --start-url \"about:debugging#/runtime/this-firefox\" --source-dir ./dist/",
     "serve:chrome": "web-ext run -t chromium --start-url \"https://github.com\" --source-dir ./dist/",
     "tsc": "tsc",

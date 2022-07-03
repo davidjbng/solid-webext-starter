@@ -45,9 +45,10 @@ pnpm run serve:chrome
 ### Firefox
 
 > Unfortunately does not support loading content scripts from localhost
+> so you need to use `vite build --watch` for now.
 
 ```sh
-pnpm run build:watch
+pnpm run watch
 ```
 
 ```sh
