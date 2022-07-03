@@ -4,14 +4,14 @@
   "description": "Vite+SolidJS Webextension",
   "type": "module",
   "scripts": {
-    "start": "vite",
     "dev": "vite",
+    "watch": "vite build --watch",
+    "serve:firefox": "web-ext run --start-url \"about:debugging#/runtime/this-firefox\" --source-dir ./dist/",
+    "serve:chrome": "web-ext run -t chromium --start-url \"https://github.com\" --source-dir ./dist/",
     "tsc": "tsc",
     "build": "vite build",
     "test": "vitest",
     "lint": "eslint .",
-    "serve:firefox": "web-ext run --start-url \"about:debugging#/runtime/this-firefox\"  --source-dir ./dist/",
-    "serve:chrome": "web-ext run -t chromium --start-url \"https://google.com\" --source-dir ./dist/",
     "webext:lint": "web-ext lint -s ./dist"
   },
   "license": "MIT",

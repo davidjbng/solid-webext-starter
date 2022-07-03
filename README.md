@@ -25,18 +25,32 @@ and [pnpm](https://pnpm.js.org/) installed.
 ### Install Dependencies
 
 ```sh
-pnpm install
+pnpm i
 ```
 
-### Starting Development Server
+## Development
+
+Run the commands in separate terminals.
+
+### Chrome
 
 ```sh
 pnpm run dev
 ```
 
-### Serve your extension within a browser
+```sh
+pnpm run serve:chrome
+```
+
+### Firefox
+
+> Unfortunately does not support loading content scripts from localhost
+> so you need to use `vite build --watch` for now.
+
+```sh
+pnpm run watch
+```
 
 ```sh
 pnpm run serve:firefox
-pnpm run serve:chrome
 ```
