@@ -12,11 +12,6 @@ Based on [@samrum/vite-plugin-web-extension](https://github.com/samrum/vite-plug
 - ESLint
 - Github Actions
 
-### Included Libraries
-
-- `webext-brige`
-- `webextension-polyfill`
-
 ## Getting Started
 
 Make sure you have [Nodejs](https://nodejs.org/en/)

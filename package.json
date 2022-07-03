@@ -39,7 +39,6 @@
     "webextension-polyfill": "^0.9.0"
   },
   "dependencies": {
-    "solid-js": "^1.4.2",
-    "webext-bridge": "^5.0.4"
+    "solid-js": "^1.4.2"
   }
 }
